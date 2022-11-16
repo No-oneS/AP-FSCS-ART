@@ -1,0 +1,38 @@
+#加载effectsize包
+#详情如https://github.com/mtorchiano/effsize
+install.packages("devtools")  ## if not already installed
+devtools::install_github("mtorchiano/effsize")
+#注意:此时报错，需要安装Rtools42包，在https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html中下载，直接默认安装就行
+#然后再重新安装
+devtools::install_github("mtorchiano/effsize")
+#> ?effectsize
+#> ?vd_a
+#通过上面两个语句查看vd_a的effect size函数的参数和使用方式
+#接下来就是数据的处理方式
+#在Rstudio的右上方的Evironment--import Dataset--From Text(base)中引入dt和ctsr的txt文件，每个文件分别有5000次F-measure的数值结果
+#具体的代码如下
+ctsr <- read.table("G:/tmp/tmp/effectsize-main/effectsize-main/ctsr.txt", quote="\"", comment.char="")
+dt <- read.table("G:/tmp/tmp/effectsize-main/effectsize-main/dt.txt", quote="\"", comment.char="")
+#此时，dt和ctsr都是list类型，但是vd_a(x,y)中的x和y参数需要数字矢量类型
+###将data.frame数据类型转换为vector数据类型
+#y<-as.vector(as.matrix(y))
+#因此将dt和ctsr从list转化为vector类型就行了
+dt<-as.vector(as.matrix(dt))
+ctsr<-as.vector(as.matrix(ctsr))
+vd_a(ctsr,dt)
+#结果如下
+#Pr(superiority) |       95% CI
+#------------------------------
+#  0.50            | [0.48, 0.51]
+
+
+
+
+#到这里，p value的值也可以直接计算了，函数如下：
+wilcox.test(ctsr,dt)
+#结果如下：
+#	Wilcoxon rank sum test with continuity correction
+#
+#data:  ctsr and dt
+#W = 4473672, p-value = 0.6947
+#alternative hypothesis: true location shift is not equal to 0

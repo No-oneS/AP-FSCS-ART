@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="G:/eclipse/eclipse-workspace/ART/real_programs_dll_files/all_dll"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="G:/eclipse/eclipse-workspace/ART/real_programs_dll_files"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="src/jar_bag/guava-31.1-jre.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
