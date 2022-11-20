@@ -380,7 +380,7 @@ public class FSCS_dt_bound_center_real_k_10_final_9{
 				temp=(int[]) future.get();
 //				System.out.println("future.take() = " + future.get() );
 				result.add(temp[0]);
-				System.out.println("第"+i+"次试验F_Measure："+temp[0]+" and M(Edge:Centre) ="+temp[1]*1.0 / temp[2]);
+				System.out.println("第"+i+"次试验F_Measure："+temp[0]);
 				sums+=temp[0];
 			}
 		} catch (Exception e) {
